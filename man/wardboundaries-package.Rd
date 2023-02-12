@@ -6,7 +6,7 @@
 \alias{wardboundaries-package}
 \title{wardboundaries: UK Ward Boundaries for Mapping}
 \description{
-Contains yearly datasets of UK ward boundaries from the ONS Open Geography Portal. Datasets are pre-formatted as sf objects with a geom column of type MULTIPOLYGON.
+Contains datasets of UK ward boundaries from the ONS Open Geography Portal. Datasets are pre-formatted as sf objects with a geom column of type MULTIPOLYGON.
 }
 \author{
 \strong{Maintainer}: Jim Gardner \email{jimmahgee@gmail.com}
