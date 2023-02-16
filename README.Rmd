@@ -169,6 +169,11 @@ If you have more complex needs then I recommend checking out [geographr](https:/
 
 A couple of weeks before making this package I knew next to nothing about geospatial data or how to get hold of it. I still don't, but Trafford Council's Data lab wrote a very helpful [Medium post](https://medium.com/@traffordDataLab/pushing-the-boundaries-with-the-open-geography-portal-api-4d70637bddc3) that explains how to work with the ONS Open Geography Portal's API to get data in practice. If you have a niche interest this resource will help you understand how to create a specific query for your needs and read the data straight into R with `sf`.
 
+### R map books
+
+- [Spatial Data Science (with applications in R)](https://r-spatial.org/book/) "introduces and explains the concepts underlying spatial data: points, lines, polygons, rasters, coverages, geometry attributes, data cubes, reference systems, as well as higher-level concepts including how attributes relate to geometries and how this affects analysis"
+- [Geocomputation with R](https://geocompr.robinlovelace.net/index.html) "is for people who want to analyze, visualize and model geographic data with open source software"
+
 ## Credits
 Developed by [Jim Gardner](https://github.com/jimgar).
 

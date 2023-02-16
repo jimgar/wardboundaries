@@ -22,7 +22,7 @@ of ducks) and plotted with packages such as `ggplot2` and `leaflet`.
 
 Current datasets are:
 
-- dec2022 (December 2022)
+-   dec2022 (December 2022)
 
 ## Installation
 
@@ -47,7 +47,7 @@ wardboundaries::dec2022
 #> Geodetic CRS:  WGS 84
 #> # A tibble: 8,483 × 14
 #>    WD22CD    WD22NM    WD22NMW LAD22CD LAD22NM  BNG_E  BNG_N  LONG   LAT OBJEC…¹
-#>  * <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
+#>    <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
 #>  1 E05000650 Astley B… " "     E08000… Bolton  370670 412906 -2.44  53.6       1
 #>  2 E05000651 Bradshaw  " "     E08000… Bolton  374590 413058 -2.39  53.6       2
 #>  3 E05000652 Breightm… " "     E08000… Bolton  374437 409641 -2.39  53.6       3
@@ -76,7 +76,7 @@ dec2022
 #> Geodetic CRS:  WGS 84
 #> # A tibble: 8,483 × 14
 #>    WD22CD    WD22NM    WD22NMW LAD22CD LAD22NM  BNG_E  BNG_N  LONG   LAT OBJEC…¹
-#>  * <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
+#>    <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
 #>  1 E05000650 Astley B… " "     E08000… Bolton  370670 412906 -2.44  53.6       1
 #>  2 E05000651 Bradshaw  " "     E08000… Bolton  374590 413058 -2.39  53.6       2
 #>  3 E05000652 Breightm… " "     E08000… Bolton  374437 409641 -2.39  53.6       3
@@ -110,16 +110,16 @@ demo_data
 #> # A tibble: 8,483 × 2
 #>    WD22CD    number_of_ducks
 #>    <chr>               <int>
-#>  1 E05000650            1214
-#>  2 E05000651             455
-#>  3 E05000652             378
-#>  4 E05000653            1102
-#>  5 E05000654             329
-#>  6 E05000655             252
-#>  7 E05000656            1083
-#>  8 E05000657            1188
-#>  9 E05000658            1063
-#> 10 E05000659             322
+#>  1 E05000650            1034
+#>  2 E05000651             750
+#>  3 E05000652             423
+#>  4 E05000653             598
+#>  5 E05000654            1129
+#>  6 E05000655            1262
+#>  7 E05000656            1093
+#>  8 E05000657             959
+#>  9 E05000658            1016
+#> 10 E05000659             705
 #> # … with 8,473 more rows
 ```
 
@@ -237,6 +237,19 @@ that explains how to work with the ONS Open Geography Portal’s API to
 get data in practice. If you have a niche interest this resource will
 help you understand how to create a specific query for your needs and
 read the data straight into R with `sf`.
+
+### R map books
+
+-   [Spatial Data Science (with applications in
+    R)](https://r-spatial.org/book/) “introduces and explains the
+    concepts underlying spatial data: points, lines, polygons, rasters,
+    coverages, geometry attributes, data cubes, reference systems, as
+    well as higher-level concepts including how attributes relate to
+    geometries and how this affects analysis”
+-   [Geocomputation with
+    R](https://geocompr.robinlovelace.net/index.html) “is for people who
+    want to analyze, visualize and model geographic data with open
+    source software”
 
 ## Credits
 
