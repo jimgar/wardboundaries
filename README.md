@@ -15,14 +15,17 @@ The only objects in the package are
 [sf](https://r-spatial.github.io/sf/) tibbles of ward boundaries,
 obtained from the ONS Open Geography Portal. All the original variables
 and observations are retained and a `geometry` column of type
-MULTIPOLYGON has been added.
+MULTIPOLYGON has been added. LAD codes and names have been added to
+datasets where required, as I believe they will prove useful in most use
+cases.
 
 This means the data is ready to be joined to measurements (e.g. number
-of ducks) and plotted with packages such as `ggplot2` and `leaflet`.
+of ducks) and plotted with e.g. `ggplot2` and `leaflet`.
 
 Current datasets are:
 
 - dec2022 (December 2022)
+- dec2021 (December 2021)
 
 ## Installation
 
@@ -110,16 +113,16 @@ demo_data
 #> # A tibble: 8,483 × 2
 #>    WD22CD    number_of_ducks
 #>    <chr>               <int>
-#>  1 E05000650            1214
-#>  2 E05000651             455
-#>  3 E05000652             378
-#>  4 E05000653            1102
-#>  5 E05000654             329
-#>  6 E05000655             252
-#>  7 E05000656            1083
-#>  8 E05000657            1188
-#>  9 E05000658            1063
-#> 10 E05000659             322
+#>  1 E05000650             366
+#>  2 E05000651            1132
+#>  3 E05000652            1285
+#>  4 E05000653             368
+#>  5 E05000654             887
+#>  6 E05000655             430
+#>  7 E05000656            1258
+#>  8 E05000657             671
+#>  9 E05000658            1450
+#> 10 E05000659             473
 #> # … with 8,473 more rows
 ```
 
@@ -219,13 +222,13 @@ leaflet::leaflet() |>
 If your needs are suited to my example maps above then
 **wardboundaries** works just fine.
 
-If you have more complex needs then I recommend checking out
+If you have more complex requirements then I recommend checking out
 [geographr](https://github.com/humaniverse/geographr). They go far
 beyond the simple local authority / ward scenario and have boundaries
 for larger hierarchies, lookup tables, NHS point data, etc. Each dataset
 in **geographr** is slimmed down to the essential variables, so you may
 have to stitch different datasets together. I only ever need LAD to
-Ward, and that’s the only reason **wardboundaries** exists.
+Ward, and that’s the main reason **wardboundaries** exists.
 
 ### Trafford lab API post
 
