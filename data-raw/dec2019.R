@@ -4,7 +4,8 @@ library(sf)
 # Collect data
 api_url <- extract_api_url("dec2019")
 
-dec2019_no_lad <- sf::read_sf(api_url)
+dec2019_no_lad <- sf::read_sf(api_url) |>
+  dplyr::select(-GlobalID)
 
 lookup <- 
   vroom::vroom(

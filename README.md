@@ -28,6 +28,8 @@ Current datasets are:
 - dec2021 (December 2021)
 - dec2020 (December 2020)
 - dec2019 (December 2019)
+- dec2011 (December 2011, unfortunately England and Wales only
+  available)
 
 ## Installation
 
@@ -115,16 +117,16 @@ demo_data
 #> # A tibble: 8,483 × 2
 #>    WD22CD    number_of_ducks
 #>    <chr>               <int>
-#>  1 E05000650             690
-#>  2 E05000651            1198
-#>  3 E05000652            1032
-#>  4 E05000653            1402
-#>  5 E05000654             451
-#>  6 E05000655            1156
-#>  7 E05000656            1310
-#>  8 E05000657            1032
-#>  9 E05000658             740
-#> 10 E05000659             436
+#>  1 E05000650             412
+#>  2 E05000651            1492
+#>  3 E05000652             704
+#>  4 E05000653             553
+#>  5 E05000654             987
+#>  6 E05000655            1372
+#>  7 E05000656            1227
+#>  8 E05000657             175
+#>  9 E05000658             732
+#> 10 E05000659            1195
 #> # … with 8,473 more rows
 ```
 

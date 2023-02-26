@@ -5,7 +5,7 @@
 \alias{dec2022}
 \title{UK Ward Boundaries December 2022}
 \format{
-Simple feature collection with 8483 features and 13 fields.
+Simple feature collection with 8483 features and 12 fields.
 \describe{
 \item{WD22CD}{2022 Ward Code}
 \item{WD22NM}{2022 Ward Name (English)}
@@ -19,7 +19,6 @@ Simple feature collection with 8483 features and 13 fields.
 \item{OBJECTID}{Equivalent to row number}
 \item{Shape__Area}{Surface area (square meters)}
 \item{Shape__Length}{Boundary length (meters)}
-\item{GlobalID}{Not sure what this one is...}
 \item{geometry}{Geometry type of MULTIPOLYGON}
 }
 }

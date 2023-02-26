@@ -5,7 +5,7 @@
 \alias{dec2019}
 \title{UK Ward Boundaries December 2019}
 \format{
-Simple feature collection with 8887 features and 13 fields.
+Simple feature collection with 8887 features and 12 fields.
 \describe{
 \item{OBJECTID}{Equivalent to row number}
 \item{WD19CD}{2019 Ward Code}
@@ -17,7 +17,6 @@ Simple feature collection with 8887 features and 13 fields.
 \item{LAT}{Latitude}
 \item{Shape__Area}{Surface area (square meters)}
 \item{Shape__Length}{Boundary length (meters)}
-\item{GlobalID}{Not sure what this one is...}
 \item{geometry}{Geometry type of MULTIPOLYGON}
 \item{LAD19CD}{2019 Local Authority District Code}
 \item{LAD19NM}{2019 Local Authority District Name}
