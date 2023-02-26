@@ -2,7 +2,7 @@
 #'
 #' Boundaries for Wards in the United Kingdom as at December 2021. The boundaries are: (BSC) Super Generalised (200m) - clipped to the coastline (Mean High Water mark). LAD codes and names have been added using the ONS Dec 2021 lookup. Contains both Ordnance Survey and ONS Intellectual Property Rights.
 #'
-#' @format Simple feature collection with 8694 features and 14 fields.
+#' @format Simple feature collection with 8694 features and 13 fields.
 #' \describe{
 #'   \item{OBJECTID}{Equivalent to row number}
 #'   \item{WD21CD}{2021 Ward Code}

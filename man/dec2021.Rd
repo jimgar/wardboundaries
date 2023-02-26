@@ -5,7 +5,7 @@
 \alias{dec2021}
 \title{UK Ward Boundaries December 2021}
 \format{
-Simple feature collection with 8694 features and 14 fields.
+Simple feature collection with 8694 features and 13 fields.
 \describe{
 \item{OBJECTID}{Equivalent to row number}
 \item{WD21CD}{2021 Ward Code}
