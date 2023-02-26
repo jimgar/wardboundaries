@@ -1,6 +1,6 @@
 #' UK Ward Boundaries December 2019
 #'
-#' Boundaries for Wards in the United Kingdom as at December 2019 The boundaries are: (BGC) Generalised (20m) - clipped to the coastline (Mean High Water mark). LAD codes and names have been added using the ONS Dec 2019 lookup. Contains both Ordnance Survey and ONS Intellectual Property Rights.
+#' Boundaries for Wards in the United Kingdom as at December 2019 The boundaries are: (BGC) Generalised (20m) - clipped to the coastline (Mean High Water mark), however the polygons have been simplified to reduce file size more or less in line with that of 200m datasets (20m was the only available version). LAD codes and names have been added using the ONS Dec 2019 lookup. Contains both Ordnance Survey and ONS Intellectual Property Rights.
 #'
 #' @format Simple feature collection with 8887 features and 13 fields.
 #' \describe{
