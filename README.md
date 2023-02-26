@@ -19,13 +19,15 @@ MULTIPOLYGON has been added. LAD codes and names have been added to
 datasets where required, as I believe they will prove useful in most use
 cases.
 
-This means the data is ready to be joined to measurements (e.g. number
-of ducks) and plotted with e.g. `ggplot2` and `leaflet`.
+This means the data is ready to be joined to measurements and plotted
+with e.g. `ggplot2` or `leaflet`.
 
 Current datasets are:
 
 - dec2022 (December 2022)
 - dec2021 (December 2021)
+- dec2020 (December 2020)
+- dec2019 (December 2019)
 
 ## Installation
 
@@ -50,7 +52,7 @@ wardboundaries::dec2022
 #> Geodetic CRS:  WGS 84
 #> # A tibble: 8,483 × 14
 #>    WD22CD    WD22NM    WD22NMW LAD22CD LAD22NM  BNG_E  BNG_N  LONG   LAT OBJEC…¹
-#>  * <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
+#>    <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
 #>  1 E05000650 Astley B… " "     E08000… Bolton  370670 412906 -2.44  53.6       1
 #>  2 E05000651 Bradshaw  " "     E08000… Bolton  374590 413058 -2.39  53.6       2
 #>  3 E05000652 Breightm… " "     E08000… Bolton  374437 409641 -2.39  53.6       3
@@ -79,7 +81,7 @@ dec2022
 #> Geodetic CRS:  WGS 84
 #> # A tibble: 8,483 × 14
 #>    WD22CD    WD22NM    WD22NMW LAD22CD LAD22NM  BNG_E  BNG_N  LONG   LAT OBJEC…¹
-#>  * <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
+#>    <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
 #>  1 E05000650 Astley B… " "     E08000… Bolton  370670 412906 -2.44  53.6       1
 #>  2 E05000651 Bradshaw  " "     E08000… Bolton  374590 413058 -2.39  53.6       2
 #>  3 E05000652 Breightm… " "     E08000… Bolton  374437 409641 -2.39  53.6       3
@@ -113,16 +115,16 @@ demo_data
 #> # A tibble: 8,483 × 2
 #>    WD22CD    number_of_ducks
 #>    <chr>               <int>
-#>  1 E05000650             289
-#>  2 E05000651             915
-#>  3 E05000652             562
-#>  4 E05000653             831
-#>  5 E05000654             286
-#>  6 E05000655            1242
-#>  7 E05000656             622
-#>  8 E05000657             277
-#>  9 E05000658             466
-#> 10 E05000659            1498
+#>  1 E05000650             690
+#>  2 E05000651            1198
+#>  3 E05000652            1032
+#>  4 E05000653            1402
+#>  5 E05000654             451
+#>  6 E05000655            1156
+#>  7 E05000656            1310
+#>  8 E05000657            1032
+#>  9 E05000658             740
+#> 10 E05000659             436
 #> # … with 8,473 more rows
 ```
 
