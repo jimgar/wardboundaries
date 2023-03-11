@@ -5,15 +5,16 @@
 \alias{countries_dec2022}
 \title{UK Countries Boundaries December 2022}
 \format{
-Simple feature collection with 374 features and 9 fields.
+Simple feature collection with 4 features and 10 fields.
 \describe{
-\item{LAD22CD}{2022 Local Authority District Code}
-\item{LAD22NM}{2022 Local Authority District Name}
+\item{FID}{ID}
+\item{CTRY22CD}{2022 Country Code}
+\item{CTRY22NM}{2022 Country Name}
+\item{CTRY22NMW}{2022 Country Name (Welsh)}
 \item{BNG_E}{Easting}
 \item{BNG_N}{Northing}
 \item{LONG}{Longitude}
 \item{LAT}{Latitude}
-\item{OBJECTID}{Equivalent to row number}
 \item{Shape__Area}{Surface area (square meters)}
 \item{Shape__Length}{Boundary length (meters)}
 \item{geometry}{Geometry type of MULTIPOLYGON}
