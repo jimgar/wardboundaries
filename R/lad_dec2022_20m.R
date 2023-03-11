@@ -1,0 +1,19 @@
+#' UK Local Authority District Boundaries December 2022
+#'
+#' Boundaries for Local Authority Districts in the United Kingdom as at December 2022. The boundaries available are: (BGC) Generalised (20m) - clipped to the coastline (Mean High Water Mark). Contains both Ordnance Survey and ONS Intellectual Property Rights. 
+#'
+#' @format Simple feature collection with 374 features and 9 fields.
+#' \describe{
+#'   \item{LAD22CD}{2022 Local Authority District Code}
+#'   \item{LAD22NM}{2022 Local Authority District Name} 
+#'   \item{BNG_E}{Easting} 
+#'   \item{BNG_N}{Northing}
+#'   \item{LONG}{Longitude} 
+#'   \item{LAT}{Latitude} 
+#'   \item{OBJECTID}{Equivalent to row number}
+#'   \item{Shape__Area}{Surface area (square meters)} 
+#'   \item{Shape__Length}{Boundary length (meters)} 
+#'   \item{geometry}{Geometry type of MULTIPOLYGON} 
+#' }
+#' @source \url{https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_December_2022_Boundaries_UK_BGC/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson}
+"lad_dec2022_20m"
