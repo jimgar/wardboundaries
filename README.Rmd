@@ -21,17 +21,33 @@ knitr::opts_chunk$set(
 
 **wardboundaries** is an R data package for mapping UK ward boundaries.
 
-The only objects in the package are [sf](https://r-spatial.github.io/sf/) tibbles of ward boundaries, obtained from the ONS Open Geography Portal. All the original variables and observations are retained and a `geometry` column of type MULTIPOLYGON has been added. LAD codes and names have been added to datasets where required, as I believe they will prove useful in most use cases.
+The main objects in the package are [sf](https://r-spatial.github.io/sf/) tibbles of ward boundaries, obtained from the ONS Open Geography Portal. 
 
-This means the data is ready to be joined to measurements and plotted with e.g. `ggplot2` or `leaflet`.
+- All the original variables and observations are retained and a `geometry` column of type MULTIPOLYGON has been added 
+- LAD codes and names have been added to datasets where required, as I believe they will prove useful in most use cases
 
-Current datasets are:
+The data is ready to be joined to measurements and plotted with e.g. `ggplot2` or `leaflet`.
 
-- dec2022 (December 2022)
-- dec2021 (December 2021)
-- dec2020 (December 2020)
-- dec2019 (December 2019)
-- dec2011 (December 2011, unfortunately England and Wales only available)
+### Current datasets
+
+**20m resolution**
+
+- countries_dec2022_20m
+- wards_dec2022_20m
+- lad_dec2022_20m
+
+**200m resolution**
+
+- wards_dec2022
+- wards_dec2021
+- wards_dec2020
+- wards_dec2019
+- wards_dec2011
+
+**500m resolution**
+
+- countries_dec2022
+- lad_dec2022
 
 ## Installation
 

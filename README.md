@@ -11,25 +11,38 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 
 **wardboundaries** is an R data package for mapping UK ward boundaries.
 
-The only objects in the package are
+The main objects in the package are
 [sf](https://r-spatial.github.io/sf/) tibbles of ward boundaries,
-obtained from the ONS Open Geography Portal. All the original variables
-and observations are retained and a `geometry` column of type
-MULTIPOLYGON has been added. LAD codes and names have been added to
-datasets where required, as I believe they will prove useful in most use
-cases.
+obtained from the ONS Open Geography Portal.
 
-This means the data is ready to be joined to measurements and plotted
-with e.g. `ggplot2` or `leaflet`.
+- All the original variables and observations are retained and a
+  `geometry` column of type MULTIPOLYGON has been added
+- LAD codes and names have been added to datasets where required, as I
+  believe they will prove useful in most use cases
 
-Current datasets are:
+The data is ready to be joined to measurements and plotted with
+e.g. `ggplot2` or `leaflet`.
 
-- dec2022 (December 2022)
-- dec2021 (December 2021)
-- dec2020 (December 2020)
-- dec2019 (December 2019)
-- dec2011 (December 2011, unfortunately England and Wales only
-  available)
+### Current datasets
+
+**20m resolution**
+
+- countries_dec2022_20m
+- wards_dec2022_20m
+- lad_dec2022_20m
+
+**200m resolution**
+
+- wards_dec2022
+- wards_dec2021
+- wards_dec2020
+- wards_dec2019
+- wards_dec2011
+
+**500m resolution**
+
+- countries_dec2022
+- lad_dec2022
 
 ## Installation
 
@@ -47,12 +60,12 @@ By namespace, without loading the whole library
 
 ``` r
 wardboundaries::dec2022
-#> Simple feature collection with 8483 features and 13 fields
+#> Simple feature collection with 8483 features and 12 fields
 #> Geometry type: MULTIPOLYGON
 #> Dimension:     XY
 #> Bounding box:  xmin: -8.649996 ymin: 49.88234 xmax: 1.763571 ymax: 60.86087
 #> Geodetic CRS:  WGS 84
-#> # A tibble: 8,483 × 14
+#> # A tibble: 8,483 × 13
 #>    WD22CD    WD22NM    WD22NMW LAD22CD LAD22NM  BNG_E  BNG_N  LONG   LAT OBJEC…¹
 #>    <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
 #>  1 E05000650 Astley B… " "     E08000… Bolton  370670 412906 -2.44  53.6       1
@@ -65,9 +78,9 @@ wardboundaries::dec2022
 #>  8 E05000657 Halliwell " "     E08000… Bolton  370828 409676 -2.44  53.6       8
 #>  9 E05000658 Harper G… " "     E08000… Bolton  371512 406080 -2.43  53.6       9
 #> 10 E05000659 Heaton a… " "     E08000… Bolton  367961 409240 -2.49  53.6      10
-#> # … with 8,473 more rows, 4 more variables: Shape__Area <dbl>,
-#> #   Shape__Length <dbl>, GlobalID <chr>, geometry <MULTIPOLYGON [°]>, and
-#> #   abbreviated variable name ¹​OBJECTID
+#> # … with 8,473 more rows, 3 more variables: Shape__Area <dbl>,
+#> #   Shape__Length <dbl>, geometry <MULTIPOLYGON [°]>, and abbreviated variable
+#> #   name ¹​OBJECTID
 ```
 
 Or by loading the whole library
@@ -76,12 +89,12 @@ Or by loading the whole library
 library(wardboundaries)
 
 dec2022
-#> Simple feature collection with 8483 features and 13 fields
+#> Simple feature collection with 8483 features and 12 fields
 #> Geometry type: MULTIPOLYGON
 #> Dimension:     XY
 #> Bounding box:  xmin: -8.649996 ymin: 49.88234 xmax: 1.763571 ymax: 60.86087
 #> Geodetic CRS:  WGS 84
-#> # A tibble: 8,483 × 14
+#> # A tibble: 8,483 × 13
 #>    WD22CD    WD22NM    WD22NMW LAD22CD LAD22NM  BNG_E  BNG_N  LONG   LAT OBJEC…¹
 #>    <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
 #>  1 E05000650 Astley B… " "     E08000… Bolton  370670 412906 -2.44  53.6       1
@@ -94,9 +107,9 @@ dec2022
 #>  8 E05000657 Halliwell " "     E08000… Bolton  370828 409676 -2.44  53.6       8
 #>  9 E05000658 Harper G… " "     E08000… Bolton  371512 406080 -2.43  53.6       9
 #> 10 E05000659 Heaton a… " "     E08000… Bolton  367961 409240 -2.49  53.6      10
-#> # … with 8,473 more rows, 4 more variables: Shape__Area <dbl>,
-#> #   Shape__Length <dbl>, GlobalID <chr>, geometry <MULTIPOLYGON [°]>, and
-#> #   abbreviated variable name ¹​OBJECTID
+#> # … with 8,473 more rows, 3 more variables: Shape__Area <dbl>,
+#> #   Shape__Length <dbl>, geometry <MULTIPOLYGON [°]>, and abbreviated variable
+#> #   name ¹​OBJECTID
 ```
 
 ### Map with ggplot2
@@ -117,16 +130,16 @@ demo_data
 #> # A tibble: 8,483 × 2
 #>    WD22CD    number_of_ducks
 #>    <chr>               <int>
-#>  1 E05000650             412
-#>  2 E05000651            1492
-#>  3 E05000652             704
-#>  4 E05000653             553
-#>  5 E05000654             987
-#>  6 E05000655            1372
-#>  7 E05000656            1227
-#>  8 E05000657             175
-#>  9 E05000658             732
-#> 10 E05000659            1195
+#>  1 E05000650             608
+#>  2 E05000651             456
+#>  3 E05000652            1490
+#>  4 E05000653             984
+#>  5 E05000654            1423
+#>  6 E05000655            1002
+#>  7 E05000656             263
+#>  8 E05000657             725
+#>  9 E05000658             188
+#> 10 E05000659            1305
 #> # … with 8,473 more rows
 ```
 
