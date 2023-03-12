@@ -59,7 +59,7 @@ Accessing a dataset can be done two ways.
 By namespace, without loading the whole library
 
 ``` r
-wardboundaries::dec2022
+wardboundaries::wards_dec2022
 #> Simple feature collection with 8483 features and 12 fields
 #> Geometry type: MULTIPOLYGON
 #> Dimension:     XY
@@ -88,7 +88,7 @@ Or by loading the whole library
 ``` r
 library(wardboundaries)
 
-dec2022
+wards_dec2022
 #> Simple feature collection with 8483 features and 12 fields
 #> Geometry type: MULTIPOLYGON
 #> Dimension:     XY
@@ -120,9 +120,9 @@ this as a choropleth with ggplot2 is nice and straightforward
 ``` r
 # Make some random numbers that represent a demographic dataset 
 demo_data <- tibble::tibble(
-  WD22CD = dplyr::pull(wardboundaries::dec2022, WD22CD),
+  WD22CD = dplyr::pull(wardboundaries::wards_dec2022, WD22CD),
   number_of_ducks = sample(
-    150:1500, nrow(wardboundaries::dec2022), replace = TRUE
+    150:1500, nrow(wardboundaries::wards_dec2022), replace = TRUE
     )
 )
 
@@ -130,23 +130,23 @@ demo_data
 #> # A tibble: 8,483 × 2
 #>    WD22CD    number_of_ducks
 #>    <chr>               <int>
-#>  1 E05000650             608
-#>  2 E05000651             456
-#>  3 E05000652            1490
-#>  4 E05000653             984
-#>  5 E05000654            1423
-#>  6 E05000655            1002
-#>  7 E05000656             263
-#>  8 E05000657             725
-#>  9 E05000658             188
-#> 10 E05000659            1305
+#>  1 E05000650            1358
+#>  2 E05000651             848
+#>  3 E05000652            1011
+#>  4 E05000653             325
+#>  5 E05000654             784
+#>  6 E05000655             539
+#>  7 E05000656            1320
+#>  8 E05000657             284
+#>  9 E05000658             548
+#> 10 E05000659             787
 #> # … with 8,473 more rows
 ```
 
 ``` r
 # Join the datasets together
 ducks_per_ward <- dplyr::left_join(
-  wardboundaries::dec2022,
+  wardboundaries::wards_dec2022,
   demo_data, 
   by = dplyr::join_by(WD22CD)
 )
@@ -244,8 +244,9 @@ If you have more complex requirements then I recommend checking out
 beyond the simple local authority / ward scenario and have boundaries
 for larger hierarchies, lookup tables, NHS point data, etc. Each dataset
 in **geographr** is slimmed down to the essential variables, so you may
-have to stitch different datasets together. I only ever need LAD to
-Ward, and that’s the main reason **wardboundaries** exists.
+have to stitch different datasets together. Another important note is
+that the polygons are highly simplified, whereas **wardboundaries**
+offers up to 20m resolution.
 
 ### Trafford lab API post
 

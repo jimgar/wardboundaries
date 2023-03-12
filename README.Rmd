@@ -64,7 +64,7 @@ Accessing a dataset can be done two ways.
 By namespace, without loading the whole library
 
 ``` {r}
-wardboundaries::dec2022
+wardboundaries::wards_dec2022
 ```
 
 Or by loading the whole library
@@ -72,7 +72,7 @@ Or by loading the whole library
 ``` {r}
 library(wardboundaries)
 
-dec2022
+wards_dec2022
 ```
 
 ### Map with ggplot2
@@ -82,9 +82,9 @@ Perhaps you have some sort of demographic data for each ward. Plotting this as a
 ``` {r}
 # Make some random numbers that represent a demographic dataset 
 demo_data <- tibble::tibble(
-  WD22CD = dplyr::pull(wardboundaries::dec2022, WD22CD),
+  WD22CD = dplyr::pull(wardboundaries::wards_dec2022, WD22CD),
   number_of_ducks = sample(
-    150:1500, nrow(wardboundaries::dec2022), replace = TRUE
+    150:1500, nrow(wardboundaries::wards_dec2022), replace = TRUE
     )
 )
 
@@ -94,7 +94,7 @@ demo_data
 ``` {r, warning = FALSE}
 # Join the datasets together
 ducks_per_ward <- dplyr::left_join(
-  wardboundaries::dec2022,
+  wardboundaries::wards_dec2022,
   demo_data, 
   by = dplyr::join_by(WD22CD)
 )
@@ -183,7 +183,7 @@ knitr::include_graphics("man/images/leaflet.gif")
 
 If your needs are suited to my example maps above then **wardboundaries** works just fine. 
 
-If you have more complex requirements then I recommend checking out [geographr](https://github.com/humaniverse/geographr). They go far beyond the simple local authority / ward scenario and have boundaries for larger hierarchies, lookup tables, NHS point data, etc. Each dataset in **geographr** is slimmed down to the essential variables, so you may have to stitch different datasets together. I only ever need LAD to Ward, and that's the main reason **wardboundaries** exists. 
+If you have more complex requirements then I recommend checking out [geographr](https://github.com/humaniverse/geographr). They go far beyond the simple local authority / ward scenario and have boundaries for larger hierarchies, lookup tables, NHS point data, etc. Each dataset in **geographr** is slimmed down to the essential variables, so you may have to stitch different datasets together. Another important note is that the polygons are highly simplified, whereas **wardboundaries** offers up to 20m resolution.
 
 ### Trafford lab API post
 
