@@ -35,6 +35,7 @@ The data is ready to be joined to measurements and plotted with e.g. `ggplot2` o
 - countries_dec2022_20m
 - wards_dec2022_20m
 - lad_dec2022_20m
+- lad_may2023_20m
 
 **200m resolution**
 
@@ -48,6 +49,7 @@ The data is ready to be joined to measurements and plotted with e.g. `ggplot2` o
 
 - countries_dec2022
 - lad_dec2022
+- lad_may2023
 
 ## Installation
 
