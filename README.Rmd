@@ -33,17 +33,19 @@ The data is ready to be joined to measurements and plotted with e.g. `ggplot2` o
 **20m resolution**
 
 - countries_dec2022_20m
-- wards_dec2022_20m
 - lad_dec2022_20m
 - lad_may2023_20m
+- wards_dec2022_20m
+- wards_may2023_20m
 
 **200m resolution**
 
-- wards_dec2022
-- wards_dec2021
-- wards_dec2020
-- wards_dec2019
 - wards_dec2011
+- wards_dec2019
+- wards_dec2020
+- wards_dec2021
+- wards_dec2022
+- wards_may2023
 
 **500m resolution**
 

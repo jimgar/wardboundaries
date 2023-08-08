@@ -28,17 +28,19 @@ e.g. `ggplot2` or `leaflet`.
 **20m resolution**
 
 - countries_dec2022_20m
-- wards_dec2022_20m
 - lad_dec2022_20m
 - lad_may2023_20m
+- wards_dec2022_20m
+- wards_may2023_20m
 
 **200m resolution**
 
-- wards_dec2022
-- wards_dec2021
-- wards_dec2020
-- wards_dec2019
 - wards_dec2011
+- wards_dec2019
+- wards_dec2020
+- wards_dec2021
+- wards_dec2022
+- wards_may2023
 
 **500m resolution**
 
@@ -68,21 +70,21 @@ wardboundaries::wards_dec2022
 #> Bounding box:  xmin: -8.649996 ymin: 49.88234 xmax: 1.763571 ymax: 60.86087
 #> Geodetic CRS:  WGS 84
 #> # A tibble: 8,483 × 13
-#>    WD22CD    WD22NM    WD22NMW LAD22CD LAD22NM  BNG_E  BNG_N  LONG   LAT OBJEC…¹
-#>    <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
-#>  1 E05000650 Astley B… " "     E08000… Bolton  370670 412906 -2.44  53.6       1
-#>  2 E05000651 Bradshaw  " "     E08000… Bolton  374590 413058 -2.39  53.6       2
-#>  3 E05000652 Breightm… " "     E08000… Bolton  374437 409641 -2.39  53.6       3
-#>  4 E05000653 Bromley … " "     E08000… Bolton  372113 414150 -2.42  53.6       4
-#>  5 E05000654 Crompton  " "     E08000… Bolton  371741 410493 -2.43  53.6       5
-#>  6 E05000655 Farnworth " "     E08000… Bolton  373564 406162 -2.40  53.6       6
-#>  7 E05000656 Great Le… " "     E08000… Bolton  371959 408204 -2.42  53.6       7
-#>  8 E05000657 Halliwell " "     E08000… Bolton  370828 409676 -2.44  53.6       8
-#>  9 E05000658 Harper G… " "     E08000… Bolton  371512 406080 -2.43  53.6       9
-#> 10 E05000659 Heaton a… " "     E08000… Bolton  367961 409240 -2.49  53.6      10
-#> # … with 8,473 more rows, 3 more variables: Shape__Area <dbl>,
-#> #   Shape__Length <dbl>, geometry <MULTIPOLYGON [°]>, and abbreviated variable
-#> #   name ¹​OBJECTID
+#>    WD22CD    WD22NM   WD22NMW LAD22CD LAD22NM  BNG_E  BNG_N  LONG   LAT OBJECTID
+#>    <chr>     <chr>    <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>    <int>
+#>  1 E05000650 Astley … " "     E08000… Bolton  370670 412906 -2.44  53.6        1
+#>  2 E05000651 Bradshaw " "     E08000… Bolton  374590 413058 -2.39  53.6        2
+#>  3 E05000652 Breight… " "     E08000… Bolton  374437 409641 -2.39  53.6        3
+#>  4 E05000653 Bromley… " "     E08000… Bolton  372113 414150 -2.42  53.6        4
+#>  5 E05000654 Crompton " "     E08000… Bolton  371741 410493 -2.43  53.6        5
+#>  6 E05000655 Farnwor… " "     E08000… Bolton  373564 406162 -2.40  53.6        6
+#>  7 E05000656 Great L… " "     E08000… Bolton  371959 408204 -2.42  53.6        7
+#>  8 E05000657 Halliwe… " "     E08000… Bolton  370828 409676 -2.44  53.6        8
+#>  9 E05000658 Harper … " "     E08000… Bolton  371512 406080 -2.43  53.6        9
+#> 10 E05000659 Heaton … " "     E08000… Bolton  367961 409240 -2.49  53.6       10
+#> # ℹ 8,473 more rows
+#> # ℹ 3 more variables: Shape__Area <dbl>, Shape__Length <dbl>,
+#> #   geometry <MULTIPOLYGON [°]>
 ```
 
 Or by loading the whole library
@@ -97,21 +99,21 @@ wards_dec2022
 #> Bounding box:  xmin: -8.649996 ymin: 49.88234 xmax: 1.763571 ymax: 60.86087
 #> Geodetic CRS:  WGS 84
 #> # A tibble: 8,483 × 13
-#>    WD22CD    WD22NM    WD22NMW LAD22CD LAD22NM  BNG_E  BNG_N  LONG   LAT OBJEC…¹
-#>    <chr>     <chr>     <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>   <int>
-#>  1 E05000650 Astley B… " "     E08000… Bolton  370670 412906 -2.44  53.6       1
-#>  2 E05000651 Bradshaw  " "     E08000… Bolton  374590 413058 -2.39  53.6       2
-#>  3 E05000652 Breightm… " "     E08000… Bolton  374437 409641 -2.39  53.6       3
-#>  4 E05000653 Bromley … " "     E08000… Bolton  372113 414150 -2.42  53.6       4
-#>  5 E05000654 Crompton  " "     E08000… Bolton  371741 410493 -2.43  53.6       5
-#>  6 E05000655 Farnworth " "     E08000… Bolton  373564 406162 -2.40  53.6       6
-#>  7 E05000656 Great Le… " "     E08000… Bolton  371959 408204 -2.42  53.6       7
-#>  8 E05000657 Halliwell " "     E08000… Bolton  370828 409676 -2.44  53.6       8
-#>  9 E05000658 Harper G… " "     E08000… Bolton  371512 406080 -2.43  53.6       9
-#> 10 E05000659 Heaton a… " "     E08000… Bolton  367961 409240 -2.49  53.6      10
-#> # … with 8,473 more rows, 3 more variables: Shape__Area <dbl>,
-#> #   Shape__Length <dbl>, geometry <MULTIPOLYGON [°]>, and abbreviated variable
-#> #   name ¹​OBJECTID
+#>    WD22CD    WD22NM   WD22NMW LAD22CD LAD22NM  BNG_E  BNG_N  LONG   LAT OBJECTID
+#>    <chr>     <chr>    <chr>   <chr>   <chr>    <int>  <int> <dbl> <dbl>    <int>
+#>  1 E05000650 Astley … " "     E08000… Bolton  370670 412906 -2.44  53.6        1
+#>  2 E05000651 Bradshaw " "     E08000… Bolton  374590 413058 -2.39  53.6        2
+#>  3 E05000652 Breight… " "     E08000… Bolton  374437 409641 -2.39  53.6        3
+#>  4 E05000653 Bromley… " "     E08000… Bolton  372113 414150 -2.42  53.6        4
+#>  5 E05000654 Crompton " "     E08000… Bolton  371741 410493 -2.43  53.6        5
+#>  6 E05000655 Farnwor… " "     E08000… Bolton  373564 406162 -2.40  53.6        6
+#>  7 E05000656 Great L… " "     E08000… Bolton  371959 408204 -2.42  53.6        7
+#>  8 E05000657 Halliwe… " "     E08000… Bolton  370828 409676 -2.44  53.6        8
+#>  9 E05000658 Harper … " "     E08000… Bolton  371512 406080 -2.43  53.6        9
+#> 10 E05000659 Heaton … " "     E08000… Bolton  367961 409240 -2.49  53.6       10
+#> # ℹ 8,473 more rows
+#> # ℹ 3 more variables: Shape__Area <dbl>, Shape__Length <dbl>,
+#> #   geometry <MULTIPOLYGON [°]>
 ```
 
 ### Map with ggplot2
@@ -132,17 +134,17 @@ demo_data
 #> # A tibble: 8,483 × 2
 #>    WD22CD    number_of_ducks
 #>    <chr>               <int>
-#>  1 E05000650             689
-#>  2 E05000651             190
-#>  3 E05000652             346
-#>  4 E05000653             724
-#>  5 E05000654            1455
-#>  6 E05000655             966
-#>  7 E05000656            1354
-#>  8 E05000657            1414
-#>  9 E05000658             734
-#> 10 E05000659             975
-#> # … with 8,473 more rows
+#>  1 E05000650            1223
+#>  2 E05000651             966
+#>  3 E05000652             830
+#>  4 E05000653             975
+#>  5 E05000654            1350
+#>  6 E05000655            1445
+#>  7 E05000656            1373
+#>  8 E05000657            1088
+#>  9 E05000658            1006
+#> 10 E05000659             538
+#> # ℹ 8,473 more rows
 ```
 
 ``` r
