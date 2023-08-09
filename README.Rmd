@@ -8,9 +8,45 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  # fig.path = "man/figures/README-",
   out.width = "100%"
 )
+```
+
+```{r, echo = FALSE, eval=FALSE}
+library(sysfonts)
+library(hexSticker)
+library(showtext)
+
+background_image <- file.path("man", "images", "hex-bg.png")
+
+font_name <- "Comfortaa"
+
+sysfonts::font_add_google(font_name, db_cache = FALSE)
+
+showtext::showtext_auto()
+
+hexSticker::sticker(
+  background_image,
+  package = "wardboundaries",
+  p_size = 6, # font size
+  p_color = "white", # font colour,
+  p_family = font_name,
+  p_fontface = "bold",
+  p_x = 1, # package name position
+  p_y = 1, # package name position
+  s_x = 1, # background image position
+  s_y = 1, # background image position
+  s_width = 1, # background image width (1 = 100%)
+  h_size = 0, # get rid of the hex border
+  white_around_sticker = TRUE,
+  filename = file.path("man", "images", "wardboundaries-hex.png")
+)
+```
+
+# wardboundaries 
+
+```{r, echo = FALSE, out.align = "centre", out.width="250px"}
+knitr::include_graphics("man/images/wardboundaries-hex.png")
 ```
 
 <!-- badges: start -->
@@ -200,6 +236,8 @@ A couple of weeks before making this package I knew next to nothing about geospa
 
 ## Credits
 Developed by [Jim Gardner](https://github.com/jimgar).
+
+Hex image cropped from [Invocation 6](https://helveticablanc.com/20220331-invocation-6.html) by Helvetica Blanc.
 
 Largely modelled on and inspired by [geographr](https://github.com/humaniverse/geographr).
 

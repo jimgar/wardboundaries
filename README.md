@@ -1,5 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# wardboundaries
+
+<img src="man/images/wardboundaries-hex.png" width="250px" />
+
 <!-- badges: start -->
 
 [![Project Status: WIP – Initial development is in progress, but there
@@ -134,16 +139,16 @@ demo_data
 #> # A tibble: 8,483 × 2
 #>    WD22CD    number_of_ducks
 #>    <chr>               <int>
-#>  1 E05000650            1223
-#>  2 E05000651             966
-#>  3 E05000652             830
-#>  4 E05000653             975
-#>  5 E05000654            1350
-#>  6 E05000655            1445
-#>  7 E05000656            1373
-#>  8 E05000657            1088
-#>  9 E05000658            1006
-#> 10 E05000659             538
+#>  1 E05000650             908
+#>  2 E05000651            1009
+#>  3 E05000652            1030
+#>  4 E05000653            1253
+#>  5 E05000654            1378
+#>  6 E05000655            1244
+#>  7 E05000656             289
+#>  8 E05000657             586
+#>  9 E05000658             589
+#> 10 E05000659             374
 #> # ℹ 8,473 more rows
 ```
 
@@ -164,7 +169,7 @@ ducks_per_ward |>
   ggplot2::theme_void()
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-6-1.png" width="100%" />
+<img src="README_files/figure-gfm/unnamed-chunk-8-1.png" width="100%" />
 
 The following plot isn’t exactly pretty, but it shows how easy it is to
 focus in on a particular local authority and add labels
@@ -183,7 +188,7 @@ ducks_per_ward |>
   ggplot2::theme_void()
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-7-1.png" width="100%" />
+<img src="README_files/figure-gfm/unnamed-chunk-9-1.png" width="100%" />
 
 ### Map with leaflet
 
@@ -278,6 +283,10 @@ read the data straight into R with `sf`.
 ## Credits
 
 Developed by [Jim Gardner](https://github.com/jimgar).
+
+Hex image cropped from [Invocation
+6](https://helveticablanc.com/20220331-invocation-6.html) by Helvetica
+Blanc.
 
 Largely modelled on and inspired by
 [geographr](https://github.com/humaniverse/geographr).
