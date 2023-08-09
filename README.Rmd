@@ -45,9 +45,9 @@ hexSticker::sticker(
 
 # wardboundaries 
 
-```{r, echo = FALSE, out.align = "centre", out.width="250px"}
-knitr::include_graphics("man/images/wardboundaries-hex.png")
-```
+<p align="center">
+  <img src="man/images/wardboundaries-hex.png" width="250">
+</p>
 
 <!-- badges: start -->
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
