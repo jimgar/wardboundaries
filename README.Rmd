@@ -8,7 +8,8 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  out.width = "100%"
+  out.width = "100%",
+  fig.path = "man/figures/"
 )
 ```
 
@@ -17,7 +18,7 @@ library(sysfonts)
 library(hexSticker)
 library(showtext)
 
-background_image <- file.path("man", "images", "hex-bg.png")
+background_image <- file.path("man", "figures", "hex-bg.png")
 
 font_name <- "Comfortaa"
 
@@ -39,15 +40,11 @@ hexSticker::sticker(
   s_width = 1, # background image width (1 = 100%)
   h_size = 0, # get rid of the hex border
   white_around_sticker = TRUE,
-  filename = file.path("man", "images", "wardboundaries-hex.png")
+  filename = file.path("man", "figures", "logo.png")
 )
 ```
 
 # wardboundaries 
-
-<p align="center">
-  <img src="man/images/wardboundaries-hex.png" width="250">
-</p>
 
 <!-- badges: start -->
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
@@ -214,7 +211,7 @@ leaflet::leaflet() |>
 ```
 
 ```{r, echo = FALSE, fig.align = "centre"}
-knitr::include_graphics("man/images/leaflet.gif")
+knitr::include_graphics("man/figures/leaflet.gif")
 ```
 
 ## Further resources

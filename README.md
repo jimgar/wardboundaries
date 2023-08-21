@@ -3,9 +3,6 @@
 
 # wardboundaries
 
-<p align="center">
-<img src="man/images/wardboundaries-hex.png" width="250">
-</p>
 <!-- badges: start -->
 
 [![Project Status: WIP – Initial development is in progress, but there
@@ -140,16 +137,16 @@ demo_data
 #> # A tibble: 8,483 × 2
 #>    WD22CD    number_of_ducks
 #>    <chr>               <int>
-#>  1 E05000650             821
-#>  2 E05000651             897
-#>  3 E05000652            1402
-#>  4 E05000653             749
-#>  5 E05000654             575
-#>  6 E05000655             275
-#>  7 E05000656             971
-#>  8 E05000657             666
-#>  9 E05000658             478
-#> 10 E05000659             409
+#>  1 E05000650            1490
+#>  2 E05000651            1194
+#>  3 E05000652            1424
+#>  4 E05000653             495
+#>  5 E05000654            1478
+#>  6 E05000655            1414
+#>  7 E05000656             193
+#>  8 E05000657             845
+#>  9 E05000658             381
+#> 10 E05000659             391
 #> # ℹ 8,473 more rows
 ```
 
@@ -170,7 +167,7 @@ ducks_per_ward |>
   ggplot2::theme_void()
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/unnamed-chunk-7-1.png" width="100%" />
 
 The following plot isn’t exactly pretty, but it shows how easy it is to
 focus in on a particular local authority and add labels
@@ -189,7 +186,7 @@ ducks_per_ward |>
   ggplot2::theme_void()
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/unnamed-chunk-8-1.png" width="100%" />
 
 ### Map with leaflet
 
@@ -240,7 +237,7 @@ leaflet::leaflet() |>
   )
 ```
 
-<img src="man/images/leaflet.gif" width="100%" />
+<img src="man/figures/leaflet.gif" width="100%" />
 
 ## Further resources
 
