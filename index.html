@@ -14,8 +14,8 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="UK Ward Boundaries for Mapping">
 <meta property="og:description" content="Contains datasets of UK ward boundaries from the ONS Open Geography Portal. Datasets are pre-formatted as sf objects with a geom column of type MULTIPOLYGON.">
@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="index.html">wardboundaries</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9001</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9002</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,6 +44,9 @@
       <ul class="navbar-nav me-auto">
 <li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="news/index.html">Changelog</a>
 </li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
@@ -82,8 +85,10 @@
 <li>countries_dec2022_20m</li>
 <li>lad_dec2022_20m</li>
 <li>lad_may2023_20m</li>
+<li>lad_dec2023_20m</li>
 <li>wards_dec2022_20m</li>
 <li>wards_may2023_20m</li>
+<li>wards_dec2023_20m</li>
 </ul>
 <p><strong>200m resolution</strong></p>
 <ul>
@@ -93,6 +98,7 @@
 <li>wards_dec2021</li>
 <li>wards_dec2022</li>
 <li>wards_may2023</li>
+<li>wards_dec2023</li>
 </ul>
 <p><strong>500m resolution</strong></p>
 <ul>
@@ -171,34 +177,35 @@
 </h3>
 <p>Perhaps you have some sort of demographic data for each ward. Plotting this as a choropleth with ggplot2 is nice and straightforward</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Make some random numbers that represent a demographic dataset </span></span>
+<code class="sourceCode R"><span><span class="co"># Make some random numbers that represent a demographic dataset</span></span>
 <span><span class="va">demo_data</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
 <span>  WD22CD <span class="op">=</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">pull</span><span class="op">(</span><span class="fu">wardboundaries</span><span class="fu">::</span><span class="va"><a href="reference/wards_dec2022.html">wards_dec2022</a></span>, <span class="va">WD22CD</span><span class="op">)</span>,</span>
 <span>  number_of_ducks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span></span>
-<span>    <span class="fl">150</span><span class="op">:</span><span class="fl">1500</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="fu">wardboundaries</span><span class="fu">::</span><span class="va"><a href="reference/wards_dec2022.html">wards_dec2022</a></span><span class="op">)</span>, replace <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span>    <span class="op">)</span></span>
+<span>    <span class="fl">150</span><span class="op">:</span><span class="fl">1500</span>, <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="fu">wardboundaries</span><span class="fu">::</span><span class="va"><a href="reference/wards_dec2022.html">wards_dec2022</a></span><span class="op">)</span>,</span>
+<span>    replace <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">demo_data</span></span>
 <span><span class="co">#&gt; # A tibble: 8,483 × 2</span></span>
 <span><span class="co">#&gt;    WD22CD    number_of_ducks</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;               &lt;int&gt;</span></span>
-<span><span class="co">#&gt;  1 E05000650            1490</span></span>
-<span><span class="co">#&gt;  2 E05000651            1194</span></span>
-<span><span class="co">#&gt;  3 E05000652            1424</span></span>
-<span><span class="co">#&gt;  4 E05000653             495</span></span>
-<span><span class="co">#&gt;  5 E05000654            1478</span></span>
-<span><span class="co">#&gt;  6 E05000655            1414</span></span>
-<span><span class="co">#&gt;  7 E05000656             193</span></span>
-<span><span class="co">#&gt;  8 E05000657             845</span></span>
-<span><span class="co">#&gt;  9 E05000658             381</span></span>
-<span><span class="co">#&gt; 10 E05000659             391</span></span>
+<span><span class="co">#&gt;  1 E05000650            1036</span></span>
+<span><span class="co">#&gt;  2 E05000651            1110</span></span>
+<span><span class="co">#&gt;  3 E05000652             621</span></span>
+<span><span class="co">#&gt;  4 E05000653             876</span></span>
+<span><span class="co">#&gt;  5 E05000654             891</span></span>
+<span><span class="co">#&gt;  6 E05000655             527</span></span>
+<span><span class="co">#&gt;  7 E05000656             892</span></span>
+<span><span class="co">#&gt;  8 E05000657             192</span></span>
+<span><span class="co">#&gt;  9 E05000658            1031</span></span>
+<span><span class="co">#&gt; 10 E05000659             968</span></span>
 <span><span class="co">#&gt; # ℹ 8,473 more rows</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Join the datasets together</span></span>
 <span><span class="va">ducks_per_ward</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">left_join</span><span class="op">(</span></span>
 <span>  <span class="fu">wardboundaries</span><span class="fu">::</span><span class="va"><a href="reference/wards_dec2022.html">wards_dec2022</a></span>,</span>
-<span>  <span class="va">demo_data</span>, </span>
+<span>  <span class="va">demo_data</span>,</span>
 <span>  by <span class="op">=</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">join_by</span><span class="op">(</span><span class="va">WD22CD</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
@@ -215,10 +222,10 @@
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu">filter</span><span class="op">(</span><span class="va">LAD22NM</span> <span class="op">==</span> <span class="st">"Vale of White Horse"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu">geom_sf</span><span class="op">(</span></span>
-<span>    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">number_of_ducks</span><span class="op">)</span>, </span>
+<span>    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">number_of_ducks</span><span class="op">)</span>,</span>
 <span>    colour <span class="op">=</span> <span class="cn">NA</span>,</span>
 <span>    show.legend <span class="op">=</span> <span class="cn">FALSE</span></span>
-<span>    <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu">geom_sf_label</span><span class="op">(</span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu">aes</span><span class="op">(</span>label <span class="op">=</span> <span class="va">number_of_ducks</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/unnamed-chunk-8-1.png" width="100%"></p>
@@ -242,7 +249,7 @@
 <span>  <span class="fu">leaflet</span><span class="fu">::</span><span class="fu">addTiles</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">leaflet</span><span class="fu">::</span><span class="fu">addPolygons</span><span class="op">(</span></span>
 <span>    data <span class="op">=</span> <span class="va">ducks_per_ward</span>,</span>
-<span>    fillColor <span class="op">=</span> <span class="op">~</span><span class="fu">pal</span><span class="op">(</span><span class="va">number_of_ducks</span><span class="op">)</span>,</span>
+<span>    fillColor <span class="op">=</span> <span class="op">~</span> <span class="fu">pal</span><span class="op">(</span><span class="va">number_of_ducks</span><span class="op">)</span>,</span>
 <span>    weight <span class="op">=</span> <span class="fl">0.1</span>,</span>
 <span>    opacity <span class="op">=</span> <span class="fl">0.9</span>,</span>
 <span>    color <span class="op">=</span> <span class="st">"white"</span>,</span>
@@ -253,12 +260,14 @@
 <span>      color <span class="op">=</span> <span class="st">"yellow"</span>,</span>
 <span>      dashArray <span class="op">=</span> <span class="st">""</span>,</span>
 <span>      fillOpacity <span class="op">=</span> <span class="fl">0.9</span>,</span>
-<span>      bringToFront <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>      bringToFront <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>    <span class="op">)</span>,</span>
 <span>    label <span class="op">=</span> <span class="va">labels</span>,</span>
 <span>    labelOptions <span class="op">=</span> <span class="fu">leaflet</span><span class="fu">::</span><span class="fu">labelOptions</span><span class="op">(</span></span>
 <span>      style <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"font-weight"</span> <span class="op">=</span> <span class="st">"normal"</span>, padding <span class="op">=</span> <span class="st">"3px 8px"</span><span class="op">)</span>,</span>
 <span>      textsize <span class="op">=</span> <span class="st">"15px"</span>,</span>
-<span>      direction <span class="op">=</span> <span class="st">"auto"</span><span class="op">)</span></span>
+<span>      direction <span class="op">=</span> <span class="st">"auto"</span></span>
+<span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">leaflet</span><span class="fu">::</span><span class="fu">addLegend</span><span class="op">(</span></span>
 <span>    pal <span class="op">=</span> <span class="va">pal</span>,</span>

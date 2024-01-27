@@ -13,6 +13,9 @@
     <loc>https://jimgar.github.io/wardboundaries/index.html</loc>
   </url>
   <url>
+    <loc>https://jimgar.github.io/wardboundaries/news/index.html</loc>
+  </url>
+  <url>
     <loc>https://jimgar.github.io/wardboundaries/reference/countries_dec2022.html</loc>
   </url>
   <url>
@@ -26,6 +29,9 @@
   </url>
   <url>
     <loc>https://jimgar.github.io/wardboundaries/reference/lad_dec2022_20m.html</loc>
+  </url>
+  <url>
+    <loc>https://jimgar.github.io/wardboundaries/reference/lad_dec2023_20m.html</loc>
   </url>
   <url>
     <loc>https://jimgar.github.io/wardboundaries/reference/lad_may2023.html</loc>
@@ -53,6 +59,12 @@
   </url>
   <url>
     <loc>https://jimgar.github.io/wardboundaries/reference/wards_dec2022_20m.html</loc>
+  </url>
+  <url>
+    <loc>https://jimgar.github.io/wardboundaries/reference/wards_dec2023.html</loc>
+  </url>
+  <url>
+    <loc>https://jimgar.github.io/wardboundaries/reference/wards_dec2023_20m.html</loc>
   </url>
   <url>
     <loc>https://jimgar.github.io/wardboundaries/reference/wards_may2023.html</loc>
