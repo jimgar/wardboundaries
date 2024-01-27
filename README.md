@@ -33,8 +33,10 @@ e.g. `ggplot2` or `leaflet`.
 - countries_dec2022_20m
 - lad_dec2022_20m
 - lad_may2023_20m
+- lad_dec2023_20m
 - wards_dec2022_20m
 - wards_may2023_20m
+- wards_dec2023_20m
 
 **200m resolution**
 
@@ -44,6 +46,7 @@ e.g. `ggplot2` or `leaflet`.
 - wards_dec2021
 - wards_dec2022
 - wards_may2023
+- wards_dec2023
 
 **500m resolution**
 
@@ -125,28 +128,29 @@ Perhaps you have some sort of demographic data for each ward. Plotting
 this as a choropleth with ggplot2 is nice and straightforward
 
 ``` r
-# Make some random numbers that represent a demographic dataset 
+# Make some random numbers that represent a demographic dataset
 demo_data <- tibble::tibble(
   WD22CD = dplyr::pull(wardboundaries::wards_dec2022, WD22CD),
   number_of_ducks = sample(
-    150:1500, nrow(wardboundaries::wards_dec2022), replace = TRUE
-    )
+    150:1500, nrow(wardboundaries::wards_dec2022),
+    replace = TRUE
+  )
 )
 
 demo_data
 #> # A tibble: 8,483 × 2
 #>    WD22CD    number_of_ducks
 #>    <chr>               <int>
-#>  1 E05000650            1490
-#>  2 E05000651            1194
-#>  3 E05000652            1424
-#>  4 E05000653             495
-#>  5 E05000654            1478
-#>  6 E05000655            1414
-#>  7 E05000656             193
-#>  8 E05000657             845
-#>  9 E05000658             381
-#> 10 E05000659             391
+#>  1 E05000650            1036
+#>  2 E05000651            1110
+#>  3 E05000652             621
+#>  4 E05000653             876
+#>  5 E05000654             891
+#>  6 E05000655             527
+#>  7 E05000656             892
+#>  8 E05000657             192
+#>  9 E05000658            1031
+#> 10 E05000659             968
 #> # ℹ 8,473 more rows
 ```
 
@@ -154,7 +158,7 @@ demo_data
 # Join the datasets together
 ducks_per_ward <- dplyr::left_join(
   wardboundaries::wards_dec2022,
-  demo_data, 
+  demo_data,
   by = dplyr::join_by(WD22CD)
 )
 ```
@@ -178,10 +182,10 @@ ducks_per_ward |>
   dplyr::filter(LAD22NM == "Vale of White Horse") |>
   ggplot2::ggplot() +
   ggplot2::geom_sf(
-    ggplot2::aes(fill = number_of_ducks), 
+    ggplot2::aes(fill = number_of_ducks),
     colour = NA,
     show.legend = FALSE
-    ) +
+  ) +
   ggplot2::geom_sf_label(ggplot2::aes(label = number_of_ducks)) +
   ggplot2::theme_void()
 ```
@@ -210,7 +214,7 @@ leaflet::leaflet() |>
   leaflet::addTiles() |>
   leaflet::addPolygons(
     data = ducks_per_ward,
-    fillColor = ~pal(number_of_ducks),
+    fillColor = ~ pal(number_of_ducks),
     weight = 0.1,
     opacity = 0.9,
     color = "white",
@@ -221,12 +225,14 @@ leaflet::leaflet() |>
       color = "yellow",
       dashArray = "",
       fillOpacity = 0.9,
-      bringToFront = TRUE),
+      bringToFront = TRUE
+    ),
     label = labels,
     labelOptions = leaflet::labelOptions(
       style = list("font-weight" = "normal", padding = "3px 8px"),
       textsize = "15px",
-      direction = "auto")
+      direction = "auto"
+    )
   ) |>
   leaflet::addLegend(
     pal = pal,

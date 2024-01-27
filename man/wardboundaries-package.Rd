@@ -6,7 +6,16 @@
 \alias{wardboundaries-package}
 \title{wardboundaries: UK Ward Boundaries for Mapping}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 Contains datasets of UK ward boundaries from the ONS Open Geography Portal. Datasets are pre-formatted as sf objects with a geom column of type MULTIPOLYGON.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://jimgar.github.io/wardboundaries/}
+}
+
 }
 \author{
 \strong{Maintainer}: Jim Gardner \email{jimmahgee@gmail.com}
